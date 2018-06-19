@@ -5,7 +5,6 @@ A repository for tools to analyze protein and/or DNA sequences
 A script that accepts a plain text file containing a single protein sequence and outputs a file with a scrambled version of the sequence.  
 Necessary argument:  
 The name of the file containing your protein sequence, in the same directory as this script or with the complete path name (-f, or --file).  
-
 Optional arguments include;  
 1) help (-h, or --help)
 2) omitting the first residue from scrambling (-o, or --omit_start) if you don't wish to include the start Methionine in the scrambling  
