@@ -6,6 +6,9 @@ A repository for tools to analyze protein and/or DNA sequences
 ## Protein_Scrambler.py
 A script that accepts a plain text file containing a single protein sequence and outputs a file with a scrambled version of the sequence. 
 
+Dependencies:
+[Biopython](https://biopython.org/)
+
 Necessary argument:  
 The name of the file containing your protein sequence, in the same directory as this script or with the complete path name (-f, or --file).  
 
