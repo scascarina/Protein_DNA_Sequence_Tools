@@ -9,7 +9,7 @@ aa_lengths = {'A' : 1.51, 'C' : 2.83, 'D' : 3.74, 'E' : 4.97, 'F' : 5.10,
 
 #dictionary with sidechain volumes (protein interior) in cubic angstroms
 #defined as the volume of a given amino acid minus the volume of a glycine residue
-#taken from column 2 in Table 3 from "Volume changes on protein folding" Harpaz et al (1994) Structure journal
+#taken from column 3 (SCp) in Table 3 from "Volume changes on protein folding" Harpaz et al (1994) Structure journal
 #NOTE: these are aa sidechain volumes in protein interiors...all aa volumes are different in solution/on protein exterior
 #NOTE: the value for cysteine assumes that it is not forming a disulfide bond...the volume if it has formed a disulfide bond is 39.7 cubic angstroms
 aa_volumes = {'A' : 26.3, 'C' : 49.4, 'D' : 53.3, 'E' : 77.0, 'F' : 129.7,
