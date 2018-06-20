@@ -24,3 +24,8 @@ The name of the file containing your protein sequence(s), in the same directory 
 
 #### Usage:
 e.g. _python Sidechain_Length_Volume.py [-h] -f "sequences.fasta"_
+
+##### References:
+Side chain lengths were taken from Table 1 in: "Extent of N-terminal methionine excision from Esherichia coli proteins is governed by the side-chain length of the penultimate amino acid" Hirel et al (1989) _PNAS_  
+
+Side chain volumes were taken from Table 3 (column 3; SCp) in: "Volume changes on protein folding" Harpaz et al (1994) _Structure_
