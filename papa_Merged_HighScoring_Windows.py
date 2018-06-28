@@ -144,6 +144,9 @@ class fasta_itr (object) :
 
 #===================================================================================================================#
 
+#Function Author: Sean Cascarina
+#Added: 6/27/2018
+
 def merge_overlapping(hit_positions):
     """A function that accepts a list of positions that are above a certain PAPA threshold and
         effectively merges positions that would result in overlapping PAPA-positive windows.
@@ -192,6 +195,9 @@ def merge_overlapping(hit_positions):
     return position_extension_combinations
 
 #================================================================================================================#    
+
+#Function Author: Sean Cascarina
+#Added: 6/27/2018
     
 def get_high_scoring_indices(sequence, highest_score_position, papa_scores, threshold=0.05):
 
@@ -223,6 +229,9 @@ def get_high_scoring_indices(sequence, highest_score_position, papa_scores, thre
     
 #=========================================================================================================================#
 
+#Function Author: Sean Cascarina
+#Added: 6/27/2018
+
 def get_merged_window_seqs(sequence, hit_indices):
     """A function that accepts the name of the gene of interest and a list of the indices of all PAPA-positive regions
         and returns the amino acid sequences of those regions"""
@@ -235,6 +244,9 @@ def get_merged_window_seqs(sequence, hit_indices):
     return seqs
     
 #=====================================================================================================#
+
+#Modified by: Sean Cascarina
+#Modification Date: 6/27/2018
 
 def run(args) :
 
@@ -304,17 +316,26 @@ def test() :
         score,pos,scores,fold_index = classify(sequences[id], True)
         print(id, len(sequences[id]), pos, score, scores[id], score / scores[id])
 
+#==================================================================================================================#
+
+#Modified by: Sean Cascarina
+#Modification Date: 6/28/2018
+
 def parse_arguments(arguments) :
     import argparse
     parser = argparse.ArgumentParser(description='Predict whether a given protein is prion forming', prog = 'papa')
     parser.add_argument('fasta_input', help = 'the input file (in fasta format)')
     parser.add_argument('-o', '--outfile', type = str,
-                        help = """the output file. In non-verbose mode the output is a comma delimited file the columns are:
-                        1) sequence id, 
-                        2) maximum score, 
+                        help = """the output file. Columns in the tab-delimited output file are:
+                        1) Sequence id, 
+                        2) Maximum score, 
                         3) Position of maximum score
                         4) Sequence(s) of Highest-scoring Window(s),
                         5) Boundaries of Highest-scoring Window(s)
+                        
+                        If the maximum score is below the default PAPA threshold 0.05, the sequence and boundaries
+                        of the highest-scoring window will be the 81aa window corresponding to the
+                        position of maximum score
                         
                         NOTE: this script does not support a "verbose" mode. Rather, it uses the data 
                         derived from verbose mode of the original PAPA script to define the 
