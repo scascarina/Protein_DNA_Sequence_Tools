@@ -50,3 +50,27 @@ You can also use the [PAPA online server](http://combi.cs.colostate.edu/suppleme
 
 ##### References:
 If you use PAPA, please cite: **Compositional determinants of prion formation in yeast**, Toombs _et al._ 2010 MCB [pubmed link](https://www.ncbi.nlm.nih.gov/pubmed/19884345)
+<br>
+<br>
+<br>
+
+## papa_Merged_HighScoring_Windows.py
+A modified version of the original PAPA script which merges all high-scoring windows and provides their amino acid sequences and boundary definitions (i.e. the amino acid positions of the start and end of high-scoring regions).
+
+#### Usage:
+Same usage as papa_Python3.py (see links above). I recommend that you specify a .txt or .tsv file extension on the output file, as columns in the output file are tab-delimited.
+
+Columns in the tab-delimited output file are:
+  1) Sequence id
+  2) Maximum score
+  3) Position of maximum score
+  4) Sequence(s) of Highest-scoring Window(s)
+  5) Boundaries of Highest-scoring Window(s)
+
+If the maximum score is below the default PAPA threshold 0.05, the sequence and boundaries of the highest-scoring window will be the 81aa window corresponding to the position of maximum score.
+
+NOTE: This script does not support a "verbose" mode. Rather, it uses the data derived from verbose mode of the original PAPA script to define the boundaries of all high-scoring protein regions.
+Additionally, this script currently only supports the default 41 amino acid window size.
+
+##### References:
+If you use PAPA, please cite: **Compositional determinants of prion formation in yeast**, Toombs _et al._ 2010 MCB [pubmed link](https://www.ncbi.nlm.nih.gov/pubmed/19884345)
