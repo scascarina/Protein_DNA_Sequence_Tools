@@ -239,8 +239,10 @@ def get_merged_window_seqs(sequence, hit_indices):
     seqs = []
     for pos in hit_indices:
         start, end = pos
-        seqs.append(sequence[ start : end+1] )
-
+	if end+1 == '*':
+            seqs.append(sequence[ start : end] )
+	else:
+            seqs.append(sequence[ start : end+1] )
     return seqs
     
 #=====================================================================================================#
